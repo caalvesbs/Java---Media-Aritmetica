@@ -1,0 +1,24 @@
+package Entities;
+
+public class Points {
+
+    public String nome;
+    public double n1;
+    public double n2;
+    public double n3;
+
+    public double media() {
+        return (n1 + n2 + n3) / 3;
+    }
+    public double resultado() {
+        if (media() <= 4.9) {
+            return 10.0 - media() + 2;
+        }
+        else if (media() >= 5 && media() <= 6.9) {
+            return 10 - media();
+        }
+        else {
+            return 0.0;
+        }
+    }
+}
