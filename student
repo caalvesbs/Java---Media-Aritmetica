@@ -1,0 +1,40 @@
+package Application;
+
+import Entities.Points;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Student {
+
+    public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+
+        Points pts = new Points();
+
+        System.out.print("Nome do aluno: ");
+        pts.nome = sc.nextLine();
+        System.out.println("Digite as notas: ");
+        pts.n1 = sc.nextDouble();
+        pts.n2 = sc.nextDouble();
+        pts.n3 = sc.nextDouble();
+
+        System.out.printf("NOTA FINAL: %.1f%n", pts.media());
+
+        if (pts.media() <= 4.9) {
+            System.out.println("ALUNO EM RECUPERAÇÃO!");
+            System.out.printf("É NECESSÁRIO %.1f PONTOS%n", pts.resultado());
+        }
+        else if (pts.media() <= 6.9) {
+            System.out.println("ALUNO EM PROVA FINAL!");
+            System.out.printf("É NECESSÁRIO %.1f PONTOS%n", pts.resultado());
+        }
+        else {
+            System.out.println("PARABÉNS!!!");
+            System.out.println("ALUNO APROVADO POR MÉDIA");
+
+            sc.close();
+
+        }
+    }
+}
